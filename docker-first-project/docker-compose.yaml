@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=<mongo-username>
+      - MONGO_INITDB_ROOT_PASSWORD=<mongo-password>
+    volumes:
+      - mongo-data:/data/db
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://<mongo-username>:<mongo-password>@mongodb:27017
+  first-spring-boot-app:
+    image: spring-boot-first:1.0
+    ports:
+      - 9091:9091
+volumes:
+  mongo-data:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: <volume-file-path>

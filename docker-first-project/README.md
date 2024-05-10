@@ -45,14 +45,30 @@ docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_URL=mongodb://<mongo-username>:<
 
 ## Create Spring Boot Application Image and Run on Docker
 
-#### 1. Build Dockerfile for spring boot application
+#### 1. Build Dockerfile to creating spring boot application image
 
 ```shell
 docker build -t spring-boot-first:1.0 <Dockerfile-path>
 ```
 
-#### 1. Create and run spring boot application container
+#### 2. Create and run spring boot application container
 
 ```shell
 docker run --name spring-boot-app -p 9091:9091 --net mongo-network spring-boot-first:1.0
+```
+
+---
+
+## Runing System with Docker Compose 
+
+#### 1. Create and run all containers with docker compose
+
+```shell
+docker-compose -f docker-compose.yaml up -d
+```
+
+#### 2. Stop and remove all containers with docker compose
+
+```shell
+docker-compose -f docker-compose.yaml down
 ```

@@ -26,4 +26,6 @@ replay_pid*
 # Other
 **/.vscode
 **/application-dev.properties
+**/Dockerfile-dev
+**/docker-compose-dev.yaml
 target
