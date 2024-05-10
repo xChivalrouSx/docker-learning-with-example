@@ -1,5 +1,5 @@
 #  docker-first-app
-For learning basic Docker with basic example app
+For learning docker basics for spring boot app
 
 ---
 
@@ -39,4 +39,20 @@ docker run -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=<mongo-username> -e M
 
 ```shell
 docker run -d -p 8081:8081 -e ME_CONFIG_MONGODB_URL=mongodb://<mongo-username>:<mongo-password>@mongodb:27017 --name mongo-express --net mongo-network mongo-express
+```
+
+---
+
+## Create Spring Boot Application Image and Run on Docker
+
+#### 1. Build Dockerfile for spring boot application
+
+```shell
+docker build -t spring-boot-first:1.0 <Dockerfile-path>
+```
+
+#### 1. Create and run spring boot application container
+
+```shell
+docker run --name spring-boot-app -p 9091:9091 --net mongo-network spring-boot-first:1.0
 ```

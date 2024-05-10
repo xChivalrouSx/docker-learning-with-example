@@ -51,6 +51,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>docker-first-project</finalName>
 	</build>
 
 </project>

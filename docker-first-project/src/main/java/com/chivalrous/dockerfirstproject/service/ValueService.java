@@ -1,5 +1,6 @@
 package com.chivalrous.dockerfirstproject.service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public class ValueService {
 
 	public Value getValue(String id) {
 		return valueRepository.findById(id).orElseThrow(NoSuchElementException::new);
+	}
+
+	public List<Value> getAllValues() {
+		return valueRepository.findAll();
 	}
 
 }
