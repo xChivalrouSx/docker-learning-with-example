@@ -1,0 +1,5 @@
+# Added just for ignore example
+.vscode
+Dockerfile
+docker-compose.yaml
+*.zip
